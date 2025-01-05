@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Rooms</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        .chat-room-list {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px; /* Adjusted to fit the dividers nicely */
+        }
+
+        .chat-room-item {
+            background-color: #007BFF;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease;
+        }
+
+        .chat-room-item:hover {
+            background-color: #0056b3;
+        }
+
+        .divider {
+            margin: 0 10px;
+            margin-bottom:40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Choose a Chat Room</h1>
+    <ul class="chat-room-list">
+        <li><a href="{% url 'room' room_name='room1' %}" class="chat-room-item">Room 1</a></li>
+        <li class="divider"></li> <!-- Divider between buttons -->
+        <li><a href="{% url 'room' room_name='room2' %}" class="chat-room-item">Room 2</a></li>
+    </ul>
+</body>
+</html>
